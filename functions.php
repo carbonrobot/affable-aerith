@@ -8,6 +8,9 @@ just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
+// Inject Affable Aerith overrides
+require_once('affable/affable-aerith.php');
+
 /************* INCLUDE NEEDED FILES ***************/
 
 /*
