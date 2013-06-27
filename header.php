@@ -43,7 +43,7 @@
 
 		<div id="container">
 
-			<header class="header" role="banner">
+    <?php /*><header class="header" role="banner">
 
 				<div id="inner-header" class="wrap clearfix">
 
@@ -53,7 +53,6 @@
 					<!-- if you'd like to use the site description you can un-comment it below -->
 					<?php // bloginfo('description'); ?>
 
-
 					<nav role="navigation">
 						<?php bones_main_nav(); ?>
 					</nav>
@@ -61,3 +60,4 @@
 				</div> <!-- end #inner-header -->
 
 			</header> <!-- end header -->
+    */ ?>

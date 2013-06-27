@@ -1,17 +1,27 @@
-				<div id="sidebar1" class="sidebar fourcol last clearfix" role="complementary">
+        <div id="sidebar1" class="sidebar fourcol last clearfix" role="complementary">
 
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+          <div id="side-blog-info">
+            <a href="<?php echo home_url(); ?>" rel="nofollow">
+              <img class="logo" title="<?php bloginfo('name'); ?>" src="http://2.gravatar.com/avatar/712d3b0602d7909dd3ba1527fef154e3?size=840" />
+            </a>
+            <div>
+              <p class="title"><?php bloginfo('name'); ?></p>
+              <p class="description"><?php echo html_entity_decode(get_bloginfo('description')); ?></p>
+            </div>
+          </div>
 
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
+          <?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
-					<?php else : ?>
+            <?php dynamic_sidebar( 'sidebar1' ); ?>
 
-						<!-- This content shows up if there are no widgets defined in the backend. -->
+          <?php else : ?>
 
-						<div class="alert alert-help">
-							<p><?php _e("Please activate some Widgets.", "bonestheme");  ?></p>
-						</div>
+            <!-- This content shows up if there are no widgets defined in the backend. -->
 
-					<?php endif; ?>
+            <div class="alert alert-help">
+              <p><?php _e("Please activate some Widgets.", "bonestheme");  ?></p>
+            </div>
 
-				</div>
+          <?php endif; ?>
+
+        </div>

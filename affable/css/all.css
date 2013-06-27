@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
 /******************************************************************
 Site Name:
 Author:
@@ -1831,4 +1832,26 @@ be set to display none.
   nav {
     display: none;
   }
+}
+body {
+  font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica', serif;
+}
+#side-blog-info .logo {
+  -webkit-border-radius: 95px;
+  -moz-border-radius: 95px;
+  -ms-border-radius: 95px;
+  -o-border-radius: 95px;
+  border-radius: 95px;
+  width: 75px;
+  height: 75px;
+}
+#side-blog-info div p.title {
+  font-size: 1.9em;
+  line-height: 2.4em;
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+#side-blog-info div p.description {
+  font-size: 0.9em;
 }

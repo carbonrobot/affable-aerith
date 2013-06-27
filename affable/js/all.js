@@ -105,7 +105,4 @@ jQuery(document).ready(function($) {
 		else if( !enabled ){ restoreZoom(); } }
 	w.addEventListener( "orientationchange", restoreZoom, false );
 	w.addEventListener( "devicemotion", checkTilt, false );
-})( this );;(function() {
-
-
-}).call(this);
+})( this );;

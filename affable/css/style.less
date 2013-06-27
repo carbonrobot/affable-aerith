@@ -1,2 +1,31 @@
 
 @import "../../library/less/style.less";
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather);
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+body {
+  font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica', serif;
+}
+
+#side-blog-info {
+  .logo {
+    .rounded-corners(95px);
+
+    width: 75px;
+    height: 75px;
+  }
+
+  div {
+    p.title { font-size: 1.9em; line-height: 2.4em; margin-top: 0.3em; margin-bottom: 0; line-height: 1em; }
+    p.description { font-size: 0.9em; }
+  }
+}
+
