@@ -1,7 +1,12 @@
 
 @import "../../library/less/style.less";
 
-@import url(http://fonts.googleapis.com/css?family=Merriweather);
+//@import url(http://fonts.googleapis.com/css?family=Merriweather);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+@ff-sans-serif: 'PT Sans', @sans-serif;
+@ff-serif: 'PT Serif', @serif;
 
 .rounded-corners (@radius: 5px) {
   -webkit-border-radius: @radius;
@@ -12,7 +17,18 @@
 }
 
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica', serif;
+  font-family: @ff-sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: @ff-serif;
+}
+
+// Smaller header sizes on home page.
+.home article {
+  @ratio: 0.9;
+  h1, .h1 { font-size: 2.5em * @ratio; }
+  h2, .h2 { font-size: 1.75em * @ratio; }
 }
 
 #side-blog-info {
@@ -24,8 +40,8 @@ body {
   }
 
   div {
-    p.title { font-size: 1.9em; line-height: 2.4em; margin-top: 0.3em; margin-bottom: 0; line-height: 1em; }
-    p.description { font-size: 0.9em; }
+    p.title { font-size: 2.3em; line-height: 2.4em; margin-top: 0.3em; margin-bottom: 0; line-height: 1em; font-family: @ff-serif; }
+    //p.description { font-size: 0.9em; }
   }
 }
 

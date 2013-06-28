@@ -1,4 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif);
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
 /******************************************************************
 Site Name:
 Author:
@@ -1834,7 +1836,27 @@ be set to display none.
   }
 }
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', 'Helvetica', serif;
+  font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-family: 'PT Serif', "Georgia", Cambria, Times New Roman, Times, serif;
+}
+.home article h1,
+.home article .h1 {
+  font-size: 2.25em;
+}
+.home article h2,
+.home article .h2 {
+  font-size: 1.575em;
 }
 #side-blog-info .logo {
   -webkit-border-radius: 95px;
@@ -1846,12 +1868,10 @@ body {
   height: 75px;
 }
 #side-blog-info div p.title {
-  font-size: 1.9em;
+  font-size: 2.3em;
   line-height: 2.4em;
   margin-top: 0.3em;
   margin-bottom: 0;
   line-height: 1em;
-}
-#side-blog-info div p.description {
-  font-size: 0.9em;
+  font-family: 'PT Serif', "Georgia", Cambria, Times New Roman, Times, serif;
 }
