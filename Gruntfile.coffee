@@ -27,7 +27,7 @@ module.exports = (grunt) ->
         files: ['affable/js/*.coffee']
         tasks: ['coffee', 'concat', 'reload']
       all:
-        files: ['*']
+        files: ['**/*.php']
         tasks: ['reload']
 
   grunt.loadNpmTasks 'grunt-contrib-less'

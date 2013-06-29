@@ -20,3 +20,10 @@ function affable_scripts_and_styles()
     wp_enqueue_style('affable-stylesheet');
   }
 }
+
+function affable_html_current_post_byline()
+{
+  $text = 'in %1$s &middot; <time class="updated" datetime="%2$s" pubdate>%3$s</time>';
+  return sprintf(__($text, 'affable_aerith'), get_the_category_list(', '), get_the_time('Y-m-j'),
+    get_the_time(get_option('date_format')));
+}

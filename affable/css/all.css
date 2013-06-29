@@ -1838,6 +1838,16 @@ be set to display none.
 body {
   font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+a,
+a:visited {
+  color: #188fbf;
+}
+a:hover,
+a:visited:hover,
+a:focus,
+a:visited:focus {
+  color: #126d92;
+}
 h1,
 .h1,
 h2,
@@ -1850,6 +1860,17 @@ h5,
 .h5 {
   font-family: 'PT Serif', "Georgia", Cambria, Times New Roman, Times, serif;
 }
+h1,
+.h1 {
+  font-weight: bold;
+  color: #222;
+}
+h1 a,
+.h1 a,
+h1 a:visited,
+.h1 a:visited {
+  color: #222;
+}
 .home article h1,
 .home article .h1 {
   font-size: 2.25em;
@@ -1857,6 +1878,26 @@ h5,
 .home article h2,
 .home article .h2 {
   font-size: 1.575em;
+}
+article > header.article-header > h1 {
+  margin-bottom: 0.1em;
+}
+article > header.article-header > p.byline {
+  margin-top: 0.1em;
+}
+article > header.article-header > p.byline a,
+article > header.article-header > p.byline a:visited {
+  color: #999999;
+  text-decoration: none;
+}
+article > header.article-header > p.byline a:hover,
+article > header.article-header > p.byline a:visited:hover,
+article > header.article-header > p.byline a:focus,
+article > header.article-header > p.byline a:visited:focus {
+  color: #126d92;
+}
+.sidebar {
+  margin-top: 1.4em;
 }
 #side-blog-info .logo {
   -webkit-border-radius: 95px;
@@ -1874,4 +1915,7 @@ h5,
   margin-bottom: 0;
   line-height: 1em;
   font-family: 'PT Serif', "Georgia", Cambria, Times New Roman, Times, serif;
+}
+.wrap {
+  max-width: 1200px;
 }

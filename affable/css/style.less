@@ -8,6 +8,11 @@
 @ff-sans-serif: 'PT Sans', @sans-serif;
 @ff-serif: 'PT Serif', @serif;
 
+@ff-body-color: #565656;
+@ff-link-color: darken(#26ADE4, 10%);
+@ff-link-hover-color: darken(@ff-link-color, 10%);
+@ff-byline-textcolor: #999;
+
 .rounded-corners (@radius: 5px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -20,8 +25,25 @@ body {
   font-family: @ff-sans-serif;
 }
 
+a, a:visited {
+  color: @ff-link-color;
+}
+
+a:hover, a:visited:hover, a:focus, a:visited:focus {
+  color: @ff-link-hover-color;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: @ff-serif;
+}
+
+h1, .h1 {
+  font-weight: bold;
+  color: #222;
+
+  a, a:visited {
+    color: #222;
+  }
 }
 
 // Smaller header sizes on home page.
@@ -29,6 +51,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   @ratio: 0.9;
   h1, .h1 { font-size: 2.5em * @ratio; }
   h2, .h2 { font-size: 1.75em * @ratio; }
+}
+
+// Lesser space between the post title and the byline 
+article > header.article-header {
+  > h1 { margin-bottom: 0.1em; }
+  > p.byline { 
+    margin-top: 0.1em; 
+
+    a, a:visited { color: @ff-byline-textcolor; text-decoration: none; }
+    a:hover, a:visited:hover, a:focus, a:visited:focus { color: @ff-link-hover-color};
+  }
+}
+
+.sidebar {
+  margin-top: 1.4em;
 }
 
 #side-blog-info {
@@ -43,5 +80,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
     p.title { font-size: 2.3em; line-height: 2.4em; margin-top: 0.3em; margin-bottom: 0; line-height: 1em; font-family: @ff-serif; }
     //p.description { font-size: 0.9em; }
   }
+}
+
+.wrap {
+  max-width: 1200px;
 }
 
