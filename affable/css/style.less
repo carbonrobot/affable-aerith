@@ -82,7 +82,51 @@ article > header.article-header {
   }
 }
 
+// Increase the max width
 .wrap {
   max-width: 1200px;
 }
 
+// Sidebar
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.sidebar-main-nav {
+  background: transparent;
+
+  ul {
+    margin-top: 0;
+    margin-left: 0.5em;
+
+    li {
+      float: left;
+      margin-bottom: 0.5em;
+      margin-right: 1em;
+
+      a, a:visited {
+        .rounded-corners(20px);
+
+        padding: 0.2em 1.2em 0.2em 1.2em;
+        border: solid 2px lighten(@ff-link-color, 50%);
+        display: inline-block;
+        background-color: transparent;
+        text-decoration: none;
+        text-transform: lowercase;
+        text-align: center;
+      }
+
+      a:hover, a:visited:hover, a:focus, a:visited:hover {
+        @background-color: lighten(@ff-link-color, 20%);
+
+        background-color: @background-color;
+        border-color: @background-color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sidebar-main-nav ul li {
+    float: none;
+  }
+}

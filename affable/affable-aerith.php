@@ -27,3 +27,16 @@ function affable_html_current_post_byline()
   return sprintf(__($text, 'affable_aerith'), get_the_category_list(', '), get_the_time('Y-m-j'),
     get_the_time(get_option('date_format')));
 }
+
+function affable_html_sidebar_main_nav()
+{
+  return wp_page_menu(array(
+    'show_home'   => true,
+    'menu_class'  => 'sidebar-main-nav clearfix', // adding custom nav class
+    'include'     => '',
+    'exclude'     => '',
+    'echo'        => false,
+    'link_before' => '',                     // before each link
+    'link_after'  => ''                      // after each link
+  ));
+}

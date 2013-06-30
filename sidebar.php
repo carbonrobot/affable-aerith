@@ -10,6 +10,10 @@
             </div>
           </div>
 
+					<nav role="navigation">
+						<?php echo affable_html_sidebar_main_nav(); ?>
+					</nav>
+
           <?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
 
             <?php dynamic_sidebar( 'sidebar1' ); ?>
