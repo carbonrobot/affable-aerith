@@ -7,14 +7,14 @@
 // Variables
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@ff-monospace: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
-@ff-sans-serif: 'PT Sans', @sans-serif;
-@ff-serif: 'PT Serif', @serif;
+@fc-monospace: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+@fc-sans-serif: 'PT Sans', @sans-serif;
+@fc-serif: 'PT Serif', @serif;
 
-@ff-body-color: #565656;
-@ff-link-color: darken(#26ADE4, 10%);
-@ff-link-hover-color: darken(@ff-link-color, 10%);
-@ff-byline-textcolor: #999;
+@fc-body-color: #565656;
+@fc-link-color: darken(#26ADE4, 10%);
+@fc-link-hover-color: darken(@fc-link-color, 10%);
+@fc-byline-textcolor: #999;
 
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,19 +31,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 body {
-  font-family: @ff-sans-serif;
+  font-family: @fc-sans-serif;
 }
 
 a, a:visited {
-  color: @ff-link-color;
+  color: @fc-link-color;
 }
 
 a:hover, a:visited:hover, a:focus, a:visited:focus {
-  color: @ff-link-hover-color;
+  color: @fc-link-hover-color;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: @ff-serif;
+  font-family: @fc-serif;
 }
 
 h1, .h1 {
@@ -74,10 +74,21 @@ article > header.article-header {
   > p.byline { 
     margin-top: 0.1em; 
 
-    a, a:visited { color: @ff-byline-textcolor; text-decoration: none; }
-    a:hover, a:visited:hover, a:focus, a:visited:focus { color: @ff-link-hover-color};
+    a, a:visited { color: @fc-byline-textcolor; text-decoration: none; }
+    a:hover, a:visited:hover, a:focus, a:visited:focus { 
+      color: @fc-link-hover-color;
+      text-decoration: underline; 
+    };
   }
 }
+
+// Increase the max width
+.wrap {
+  max-width: 1200px;
+}
+
+// Sidebar
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .sidebar {
   margin-top: 1.4em;
@@ -92,18 +103,16 @@ article > header.article-header {
   }
 
   div {
-    p.title { font-size: 2.3em; line-height: 2.4em; margin-top: 0.3em; margin-bottom: 0; line-height: 1em; font-family: @ff-serif; }
-    //p.description { font-size: 0.9em; }
+    p.title { 
+      font-size: 2.3em; 
+      line-height: 2.4em;
+      margin-top: 0.3em;
+      margin-bottom: 0; 
+      line-height: 1em;
+      font-family: @fc-serif; 
+    }
   }
 }
-
-// Increase the max width
-.wrap {
-  max-width: 1200px;
-}
-
-// Sidebar
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .sidebar-main-nav {
   background: transparent;
@@ -121,7 +130,7 @@ article > header.article-header {
         .rounded-corners(20px);
 
         padding: 0.2em 1.2em 0.2em 1.2em;
-        border: solid 2px lighten(@ff-link-color, 50%);
+        border: solid 2px lighten(@fc-link-color, 50%);
         display: inline-block;
         background-color: transparent;
         text-decoration: none;
@@ -130,7 +139,7 @@ article > header.article-header {
       }
 
       a:hover, a:visited:hover, a:focus, a:visited:hover {
-        @background-color: lighten(@ff-link-color, 20%);
+        @background-color: lighten(@fc-link-color, 20%);
 
         background-color: @background-color;
         border-color: @background-color;
@@ -141,8 +150,36 @@ article > header.article-header {
 }
 
 @media only screen and (min-width: 768px) {
+  // Align vertically for larger screens
   .sidebar-main-nav ul li {
     float: none;
+  }
+}
+
+.fc-widget-li-border {
+  @border-color: #e0e0e0;
+  border-bottom: solid 1px @border-color;
+  .boxShadow(0, 1px, 0px, 0px, lighten(@border-color, 10%));
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
+
+.widget {
+  .widgettitle { 
+    font-size: 1.2em;
+    border: none; // Reset
+    .fc-widget-li-border;
+  }
+
+  > ul { margin-top: 0; }
+
+  ul > li {
+    .fc-widget-li-border;
+    font-size: 0.95em;
+
+    a, a:visited { text-decoration: none; }
+    a:hover, a:visited:hover, a:focus, a:visited:hover { text-decoration: underline; }
   }
 }
 
@@ -150,10 +187,10 @@ article > header.article-header {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .mono, pre, code, tt, div code, p code, li code {
-  font-family: @ff-monospace;
+  font-family: @fc-monospace;
 }
 
-p > code, li > code {
+p > code, li > code, p > a code {
   font-size: 0.9em;
   background-color: darken(#fff, 1%);
   padding: 0.2em 0.3em;

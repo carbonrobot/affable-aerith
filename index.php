@@ -18,7 +18,7 @@
 								</header> <!-- end article header -->
 
 								<section class="entry-content clearfix">
-									<?php the_content(); ?>
+									<?php the_excerpt(); ?>
 								</section> <!-- end article section -->
 
 								<footer class="article-footer">

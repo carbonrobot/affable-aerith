@@ -1901,6 +1901,10 @@ article > header.article-header > p.byline a:visited:hover,
 article > header.article-header > p.byline a:focus,
 article > header.article-header > p.byline a:visited:focus {
   color: #126d92;
+  text-decoration: underline;
+}
+.wrap {
+  max-width: 1200px;
 }
 .sidebar {
   margin-top: 1.4em;
@@ -1921,9 +1925,6 @@ article > header.article-header > p.byline a:visited:focus {
   margin-bottom: 0;
   line-height: 1em;
   font-family: 'PT Serif', "Georgia", Cambria, Times New Roman, Times, serif;
-}
-.wrap {
-  max-width: 1200px;
 }
 .sidebar-main-nav {
   background: transparent;
@@ -1965,6 +1966,49 @@ article > header.article-header > p.byline a:visited:focus {
     float: none;
   }
 }
+.fc-widget-li-border {
+  border-bottom: solid 1px #e0e0e0;
+  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
+  -moz-box-shadow: 0 1px 0px 0px #fafafa;
+  box-shadow: 0 1px 0px 0px #fafafa;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
+.widget .widgettitle {
+  font-size: 1.2em;
+  border: none;
+  border-bottom: solid 1px #e0e0e0;
+  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
+  -moz-box-shadow: 0 1px 0px 0px #fafafa;
+  box-shadow: 0 1px 0px 0px #fafafa;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+}
+.widget > ul {
+  margin-top: 0;
+}
+.widget ul > li {
+  border-bottom: solid 1px #e0e0e0;
+  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
+  -moz-box-shadow: 0 1px 0px 0px #fafafa;
+  box-shadow: 0 1px 0px 0px #fafafa;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-bottom: 0;
+  font-size: 0.95em;
+}
+.widget ul > li a,
+.widget ul > li a:visited {
+  text-decoration: none;
+}
+.widget ul > li a:hover,
+.widget ul > li a:visited:hover,
+.widget ul > li a:focus,
+.widget ul > li a:visited:hover {
+  text-decoration: underline;
+}
 .mono,
 pre,
 code,
@@ -1975,7 +2019,8 @@ li code {
   font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 }
 p > code,
-li > code {
+li > code,
+p > a code {
   font-size: 0.9em;
   background-color: #fcfcfc;
   padding: 0.2em 0.3em;
