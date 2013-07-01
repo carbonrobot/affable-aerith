@@ -15,6 +15,7 @@
 @fc-link-color: darken(#26ADE4, 10%);
 @fc-link-hover-color: darken(@fc-link-color, 10%);
 @fc-byline-textcolor: #999;
+@fc-sidebar-divider-color: #e1e1e1;
 
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -92,9 +93,14 @@ article > header.article-header {
 
 .sidebar {
   margin-top: 1.4em;
+
+  padding-top: 3em;
+  border-top: solid 1px @fc-sidebar-divider-color;
 }
 
 #side-blog-info {
+  text-align: center;
+
   .logo {
     .rounded-corners(95px);
 
@@ -120,9 +126,11 @@ article > header.article-header {
   ul {
     margin-top: 0;
     margin-left: 0.5em;
+    text-align: center;
 
     li {
-      float: left;
+      float: none;
+      display: inline;
       margin-bottom: 0.5em;
       margin-right: 1em;
 
@@ -149,17 +157,29 @@ article > header.article-header {
   }
 }
 
+// Starting on this width, sidebar will be on the right.
 @media only screen and (min-width: 768px) {
-  // Align vertically for larger screens
-  .sidebar-main-nav ul li {
-    float: none;
+  .sidebar {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  #side-blog-info {
+    text-align: left;
+  }
+  // Align vertically 
+  .sidebar-main-nav ul {
+    text-align: left;
+    li {
+      display: block;
+      //float: none;
+    } 
   }
 }
 
 .fc-widget-li-border {
-  @border-color: #e0e0e0;
-  border-bottom: solid 1px @border-color;
-  .boxShadow(0, 1px, 0px, 0px, lighten(@border-color, 10%));
+  border-bottom: dotted 1px @fc-sidebar-divider-color;
+  //.boxShadow(0, 1px, 0px, 0px, lighten(@fc-sidebar-divider-color, 10%));
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;

@@ -1908,6 +1908,11 @@ article > header.article-header > p.byline a:visited:focus {
 }
 .sidebar {
   margin-top: 1.4em;
+  padding-top: 3em;
+  border-top: solid 1px #e1e1e1;
+}
+#side-blog-info {
+  text-align: center;
 }
 #side-blog-info .logo {
   -webkit-border-radius: 95px;
@@ -1932,9 +1937,11 @@ article > header.article-header > p.byline a:visited:focus {
 .sidebar-main-nav ul {
   margin-top: 0;
   margin-left: 0.5em;
+  text-align: center;
 }
 .sidebar-main-nav ul li {
-  float: left;
+  float: none;
+  display: inline;
   margin-bottom: 0.5em;
   margin-right: 1em;
 }
@@ -1962,15 +1969,22 @@ article > header.article-header > p.byline a:visited:focus {
   color: #fff;
 }
 @media only screen and (min-width: 768px) {
+  .sidebar {
+    border-top: none;
+    padding-top: 0;
+  }
+  #side-blog-info {
+    text-align: left;
+  }
+  .sidebar-main-nav ul {
+    text-align: left;
+  }
   .sidebar-main-nav ul li {
-    float: none;
+    display: block;
   }
 }
 .fc-widget-li-border {
-  border-bottom: solid 1px #e0e0e0;
-  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
-  -moz-box-shadow: 0 1px 0px 0px #fafafa;
-  box-shadow: 0 1px 0px 0px #fafafa;
+  border-bottom: dotted 1px #e1e1e1;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
@@ -1978,10 +1992,7 @@ article > header.article-header > p.byline a:visited:focus {
 .widget .widgettitle {
   font-size: 1.2em;
   border: none;
-  border-bottom: solid 1px #e0e0e0;
-  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
-  -moz-box-shadow: 0 1px 0px 0px #fafafa;
-  box-shadow: 0 1px 0px 0px #fafafa;
+  border-bottom: dotted 1px #e1e1e1;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
@@ -1990,10 +2001,7 @@ article > header.article-header > p.byline a:visited:focus {
   margin-top: 0;
 }
 .widget ul > li {
-  border-bottom: solid 1px #e0e0e0;
-  -webkit-box-shadow: 0 1px 0px 0px #fafafa;
-  -moz-box-shadow: 0 1px 0px 0px #fafafa;
-  box-shadow: 0 1px 0px 0px #fafafa;
+  border-bottom: dotted 1px #e1e1e1;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
