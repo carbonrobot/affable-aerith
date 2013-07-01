@@ -1,10 +1,13 @@
 
 @import "../../library/less/style.less";
 
-//@import url(http://fonts.googleapis.com/css?family=Merriweather);
 @import url(http://fonts.googleapis.com/css?family=PT+Serif);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 
+// Variables
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@ff-monospace: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 @ff-sans-serif: 'PT Sans', @sans-serif;
 @ff-serif: 'PT Serif', @serif;
 
@@ -13,6 +16,9 @@
 @ff-link-hover-color: darken(@ff-link-color, 10%);
 @ff-byline-textcolor: #999;
 
+// Functions
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 .rounded-corners (@radius: 5px) {
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
@@ -20,6 +26,9 @@
   -o-border-radius: @radius;
   border-radius: @radius;
 }
+
+// Start
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 body {
   font-family: @ff-sans-serif;
@@ -44,6 +53,12 @@ h1, .h1 {
   a, a:visited {
     color: #222;
   }
+}
+
+ol {
+  list-style-type: decimal;
+
+  li { margin-left: 1.2em; }
 }
 
 // Smaller header sizes on home page.
@@ -129,4 +144,19 @@ article > header.article-header {
   .sidebar-main-nav ul li {
     float: none;
   }
+}
+
+// Code
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.mono, pre, code, tt, div code, p code, li code {
+  font-family: @ff-monospace;
+}
+
+p > code, li > code {
+  font-size: 0.9em;
+  background-color: darken(#fff, 1%);
+  padding: 0.2em 0.3em;
+  border: solid 1px #e1e1e1;
+  .rounded-corners(5px);
 }

@@ -1871,6 +1871,12 @@ h1 a:visited,
 .h1 a:visited {
   color: #222;
 }
+ol {
+  list-style-type: decimal;
+}
+ol li {
+  margin-left: 1.2em;
+}
 .home article h1,
 .home article .h1 {
   font-size: 2.25em;
@@ -1958,4 +1964,25 @@ article > header.article-header > p.byline a:visited:focus {
   .sidebar-main-nav ul li {
     float: none;
   }
+}
+.mono,
+pre,
+code,
+tt,
+div code,
+p code,
+li code {
+  font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
+}
+p > code,
+li > code {
+  font-size: 0.9em;
+  background-color: #fcfcfc;
+  padding: 0.2em 0.3em;
+  border: solid 1px #e1e1e1;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
 }
