@@ -15,7 +15,7 @@
 @fc-link-color: darken(#26ADE4, 10%);
 @fc-link-hover-color: darken(@fc-link-color, 10%);
 @fc-byline-textcolor: #999;
-@fc-sidebar-divider-color: #e1e1e1;
+@fc-divider-color: #e1e1e1;
 
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,17 +88,10 @@ article > header.article-header {
   max-width: 1200px;
 }
 
-// Sidebar
+// Blog info box in header and sidebar
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-.sidebar {
-  margin-top: 1.4em;
-
-  padding-top: 3em;
-  border-top: solid 1px @fc-sidebar-divider-color;
-}
-
-#side-blog-info {
+.blog-info {
   text-align: center;
 
   .logo {
@@ -120,7 +113,7 @@ article > header.article-header {
   }
 }
 
-.sidebar-main-nav {
+.main-nav {
   background: transparent;
 
   ul {
@@ -159,16 +152,12 @@ article > header.article-header {
 
 // Starting on this width, sidebar will be on the right.
 @media only screen and (min-width: 768px) {
-  .sidebar {
-    border-top: none;
-    padding-top: 0;
-  }
-
-  #side-blog-info {
+  .blog-info {
     text-align: left;
   }
+
   // Align vertically 
-  .sidebar-main-nav ul {
+  .main-nav ul {
     text-align: left;
     li {
       display: block;
@@ -177,9 +166,55 @@ article > header.article-header {
   }
 }
 
+// Header
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+header.header {
+  padding-bottom: 1em;
+  border-bottom: solid 1px @fc-divider-color;
+
+  .blog-info {
+    margin-top: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  // Hide header on bigger screens
+  header.header {
+    display: none;
+  }
+}
+
+// Sidebar
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.sidebar {
+  margin-top: 1.4em;
+
+  border-top: solid 1px @fc-divider-color;
+
+  // Blog info is hidden on small screens
+  .blog-info, nav.side-nav {
+    display: none;
+  }
+}
+
+// Starting on this width, sidebar will be on the right.
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    border-top: none;
+    padding-top: 0;
+
+    // Show blog info and navigation only on big screens
+    .blog-info, nav.side-nav {
+      display: block;
+    }
+  }
+}
+
 .fc-widget-li-border {
-  border-bottom: dotted 1px @fc-sidebar-divider-color;
-  //.boxShadow(0, 1px, 0px, 0px, lighten(@fc-sidebar-divider-color, 10%));
+  border-bottom: dotted 1px @fc-divider-color;
+  //.boxShadow(0, 1px, 0px, 0px, lighten(@fc-divider-color, 10%));
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-bottom: 0;
@@ -200,6 +235,19 @@ article > header.article-header {
 
     a, a:visited { text-decoration: none; }
     a:hover, a:visited:hover, a:focus, a:visited:hover { text-decoration: underline; }
+  }
+}
+
+// Content
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#content {
+  margin-top: 0.3em;
+}
+
+@media only screen and (min-width: 768px) {
+  #content {
+    margin-top: 2.2em;
   }
 }
 

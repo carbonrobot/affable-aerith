@@ -42,6 +42,14 @@
 	<body <?php body_class(); ?>>
 
 		<div id="container">
+      <header class="header" role="banner">
+        <div id="inner-header" class="wrap clearfix">
+          <?php include(dirname(__FILE__) . '/blog-info.php'); ?>
+					<nav role="navigation">
+						<?php echo affable_html_main_nav(); ?>
+					</nav>
+        </div>
+      </header>
 
     <?php /*><header class="header" role="banner">
 

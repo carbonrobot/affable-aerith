@@ -28,11 +28,11 @@ function affable_html_current_post_byline()
     get_the_time(get_option('date_format')));
 }
 
-function affable_html_sidebar_main_nav()
+function affable_html_main_nav()
 {
   return wp_page_menu(array(
     'show_home'   => true,
-    'menu_class'  => 'sidebar-main-nav clearfix', // adding custom nav class
+    'menu_class'  => 'main-nav clearfix', // adding custom nav class
     'include'     => '',
     'exclude'     => '',
     'echo'        => false,
