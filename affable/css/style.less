@@ -268,11 +268,37 @@ p > code, p > a code {
 }
 
 .entry-content pre {
-  background: #2d2d2d;
-  //background: darken(white, 2%);
-  //border: solid 1px darken(white, 10%);
+  background: lighten(#e9e9e9, 5%);
+  border: none;
+
+  padding: 0.8em 1em 0.8em 1.2em;
 
   font-size: 0.85em;
-  .rounded-corners(5px);
+
+  .rounded-corners(10px);
 }
+
+// Remove periods from <li> (http://bit.ly/1b9I64R)
+.entry-content ol.linenums {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+
+  > li {
+    display: block;
+    margin-left: 2em;
+  }
+
+  > li:before {
+    display: inline-block;
+    content: counter(item) "";
+    counter-increment: item;
+    width: 2em;
+    margin-left: -2em;
+
+    color: lighten(#4d4d4c, 30%);
+  }
+}
+
+
 

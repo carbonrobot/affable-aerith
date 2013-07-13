@@ -2065,11 +2065,30 @@ p > a code {
   border-radius: 5px;
 }
 .entry-content pre {
-  background: #2d2d2d;
+  background: #f6f6f6;
+  border: none;
+  padding: 0.8em 1em 0.8em 1.2em;
   font-size: 0.85em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.entry-content ol.linenums {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+.entry-content ol.linenums > li {
+  display: block;
+  margin-left: 2em;
+}
+.entry-content ol.linenums > li:before {
+  display: inline-block;
+  content: counter(item) "";
+  counter-increment: item;
+  width: 2em;
+  margin-left: -2em;
+  color: #9a9a98;
 }

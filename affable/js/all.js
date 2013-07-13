@@ -1761,6 +1761,6 @@ var prettyPrint;
   }
 })();
 ;(function($) {
-  $('pre').addClass('prettyprint');
+  $('pre').addClass('prettyprint linenums');
   return prettyPrint();
 })(jQuery);
