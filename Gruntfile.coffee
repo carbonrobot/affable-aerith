@@ -6,7 +6,8 @@ module.exports = (grunt) ->
     less:
       compile:
         files:
-          'affable/css/all.css': 'affable/css/style.less'
+          'affable/css/head.css': 'affable/css/head.less'
+          'affable/css/style.css': 'affable/css/style.less'
     coffee:
       options:
         bare: true
@@ -14,15 +15,26 @@ module.exports = (grunt) ->
         files:
           'affable/js/affable.js': ['affable/js/*.coffee']
     concat:
-      options:
-        separator: ';'
-      all:
-        src: ['library/js/scripts.js', 'affable/js/affable.js']
-        dest: 'affable/js/all.js'
+      js:
+        options:
+          separator: ';'
+        files:
+           'affable/js/all.js': [
+             'library/js/scripts.js',
+             'affable/js/libs/prettify.js',
+             'affable/js/affable.js'
+           ]
+      css:
+        files:
+          'affable/css/all.css': [
+            'affable/css/head.css',
+            'affable/css/libs/prettify.css',
+            'affable/css/style.css'
+          ]
     watch:
       less:
         files: ['affable/css/*.less']
-        tasks: ['less', 'reload']
+        tasks: ['less', 'concat', 'reload']
       coffee:
         files: ['affable/js/*.coffee']
         tasks: ['coffee', 'concat', 'reload']
