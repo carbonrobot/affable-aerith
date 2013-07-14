@@ -1,5 +1,6 @@
 
 @import "../../library/less/style.less";
+@import "libs/elements.less";
 //@import "libs/prettify.css";
 
 //@import url(http://fonts.googleapis.com/css?family=PT+Serif);
@@ -20,17 +21,6 @@
 @fc-pre-background-color: lighten(#e9e9e9, 5%);
 @fc-main-nav-border-color: lighten(@fc-link-color, 50%);
 @fc-main-nav-hover-background-color: lighten(@fc-link-color, 20%);
-
-// Functions
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-.rounded-corners (@radius: 5px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  -ms-border-radius: @radius;
-  -o-border-radius: @radius;
-  border-radius: @radius;
-}
 
 // Start
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -99,7 +89,7 @@ article > header.article-header {
   text-align: center;
 
   .logo {
-    .rounded-corners(95px);
+    .rounded(95px);
 
     width: 75px;
     height: 75px;
@@ -132,7 +122,7 @@ article > header.article-header {
       margin-right: 1em;
 
       a, a:visited {
-        .rounded-corners(20px);
+        .rounded(20px);
 
         padding: 0.2em 1.2em 0.2em 1.2em;
         border: solid 2px @fc-main-nav-border-color;
@@ -260,7 +250,8 @@ a.more-link, a.more-link:visited {
   font-size: 1.1em;
   color: @fc-body-color;
   text-decoration: none;
-  background-color: lighten(@fc-divider-color, 7%);
+  //background-color: lighten(@fc-divider-color, 7%);
+  background-color: lighten(@fc-main-nav-border-color, 3%);
   display: inline-block;
   padding: 0.4em 0.8em;
   margin-top: 0.8em;
@@ -285,7 +276,7 @@ p > code, p > a code {
   background-color: darken(#fff, 1%);
   padding: 0.2em 0.3em;
   border: solid 1px #e1e1e1;
-  .rounded-corners(5px);
+  .rounded(5px);
 }
 
 // Code blocks
@@ -302,7 +293,7 @@ p > code, p > a code {
 
   font-size: 0.85em;
 
-  .rounded-corners(10px);
+  .rounded(10px);
 }
 
 // Remove periods from <li> (http://bit.ly/1b9I64R)
@@ -345,7 +336,7 @@ p.tags {
     padding: 0.3em 0.5em;
     border: dotted 1px @fc-divider-color;
 
-    .rounded-corners(5px);
+    .rounded(5px);
   }
 
   a:hover, a:focus, a:visited:hover, a:visited:focus {
@@ -360,6 +351,46 @@ p.tags {
 // Add divider after the tags
 body.single-post footer.article-footer {
   border-bottom: solid 1px @fc-divider-color;
+}
+
+nav.wp-prev-next {
+  margin-top: 1.5em;
+  padding-top: 0.5em;
+  border-top: solid 1px @fc-divider-color;
+
+  text-align: center;
+
+  li.prev-link, li.next-link {
+    display: inline-block;
+    float: none;
+  }
+
+  a, a:visited {
+    min-width: 6.2em;
+    font-size: 1.1em;
+    color: @fc-body-color;
+    text-decoration: none;
+    background-color: lighten(@fc-divider-color, 7%);
+    padding: 0.4em 1.3em;
+    text-align: center;
+    display: inline-block;
+  }
+
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    background-color: @fc-main-nav-hover-background-color;
+    color: #fff;
+  }
+
+  li.prev-link a {
+    .border-radius(0px, 0px, 30px, 30px);
+  }
+  li.next-link a {
+    .border-radius(30px, 30px, 0px, 0px);
+  }
+
+  li.only-link a {
+    .rounded(30px);
+  }
 }
 
 
