@@ -2232,6 +2232,10 @@ p > a code {
 .entry-content pre {
   background: #f6f6f6;
   border: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-wrap: normal;
+  white-space: pre;
   padding: 0.8em 1em 0.8em 1.2em;
   font-size: 0.85em;
   -webkit-border-radius: 10px;
