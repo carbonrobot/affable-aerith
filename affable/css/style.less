@@ -286,7 +286,7 @@ p > code, p > a code {
 
   > li {
     display: block;
-    margin-left: 2em;
+    margin-left: 1.5em;
   }
 
   > li:before {
@@ -294,9 +294,15 @@ p > code, p > a code {
     content: counter(item) "";
     counter-increment: item;
     width: 2em;
-    margin-left: -2em;
 
-    color: lighten(#4d4d4c, 30%);
+    color: lighten(#4d4d4c, 55%);
+    font-size: 0.95em;
+    text-align: right;
+    margin-left: -3em;
+  }
+
+  > li > code:first-child {
+    margin-left: 1em;
   }
 }
 

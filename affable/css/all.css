@@ -2247,13 +2247,18 @@ p > a code {
 }
 .entry-content ol.linenums > li {
   display: block;
-  margin-left: 2em;
+  margin-left: 1.5em;
 }
 .entry-content ol.linenums > li:before {
   display: inline-block;
   content: counter(item) "";
   counter-increment: item;
   width: 2em;
-  margin-left: -2em;
-  color: #9a9a98;
+  color: #d9d9d9;
+  font-size: 0.95em;
+  text-align: right;
+  margin-left: -3em;
+}
+.entry-content ol.linenums > li > code:first-child {
+  margin-left: 1em;
 }
