@@ -3,6 +3,6 @@
 #
 
 (($) ->
-  $('pre').addClass 'prettyprint linenums'
+  $('pre').addClass 'prettyprint'
   prettyPrint()
 )(jQuery)

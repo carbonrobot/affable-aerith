@@ -40,3 +40,8 @@ function affable_html_main_nav()
     'link_after'  => ''                      // after each link
   ));
 }
+
+function affable_article_tags()
+{
+  the_tags('<span class="tags-title">' . __('Tagged', 'bonestheme') . '</span> ', ' ', '');
+}

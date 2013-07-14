@@ -17,6 +17,7 @@
 @fc-link-hover-color: darken(@fc-link-color, 10%);
 @fc-byline-textcolor: #999;
 @fc-divider-color: #e1e1e1;
+@fc-pre-background-color: lighten(#e9e9e9, 5%);
 
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -268,7 +269,7 @@ p > code, p > a code {
 }
 
 .entry-content pre {
-  background: lighten(#e9e9e9, 5%);
+  background: @fc-pre-background-color;
   border: none;
 
   overflow-x: auto;
@@ -309,6 +310,34 @@ p > code, p > a code {
   > li > code:first-child {
     margin-left: 1em;
   }
+}
+
+// Article Tags
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+p.tags {
+  line-height: 2.2em;
+
+  a, a:visited {
+    //color: @fc-body-color;
+    text-decoration: none;
+    padding: 0.3em 0.5em;
+    border: dotted 1px @fc-divider-color;
+
+    .rounded-corners(5px);
+  }
+
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: @fc-link-hover-color;
+    border: dotted 1px darken(@fc-divider-color, 20%);
+  }
+}
+
+// Footer
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+body.single-post footer.article-footer {
+  border-bottom: solid 1px @fc-divider-color;
 }
 
 

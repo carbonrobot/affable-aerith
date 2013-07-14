@@ -22,8 +22,7 @@
 								</section> <!-- end article section -->
 
 								<footer class="article-footer">
-									<?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
-
+                  <p class="tags"><?php affable_article_tags(); ?></p>
 								</footer> <!-- end article footer -->
 
 								<?php comments_template(); ?>

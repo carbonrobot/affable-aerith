@@ -21,10 +21,11 @@
 									<?php the_excerpt(); ?>
 								</section> <!-- end article section -->
 
+                <?php /*>
 								<footer class="article-footer">
-									<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', ''); ?></p>
-
+                  <p class="tags"><?php affable_article_tags(); ?></p>
 								</footer> <!-- end article footer -->
+                */?>
 
 								<?php // comments_template(); // uncomment if you want to use them ?>
 
