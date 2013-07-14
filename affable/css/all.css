@@ -2208,6 +2208,23 @@ header.header .blog-info {
     margin-top: 2.2em;
   }
 }
+a.more-link,
+a.more-link:visited {
+  font-size: 1.1em;
+  color: #565656;
+  text-decoration: none;
+  background-color: #f3f3f3;
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  margin-top: 0.8em;
+}
+a.more-link:hover,
+a.more-link:focus,
+a.more-link:visited:hover,
+a.more-link:visited:focus {
+  background-color: #53beea;
+  color: #fff;
+}
 .mono,
 pre,
 code,

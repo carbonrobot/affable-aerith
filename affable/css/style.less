@@ -18,6 +18,8 @@
 @fc-byline-textcolor: #999;
 @fc-divider-color: #e1e1e1;
 @fc-pre-background-color: lighten(#e9e9e9, 5%);
+@fc-main-nav-border-color: lighten(@fc-link-color, 50%);
+@fc-main-nav-hover-background-color: lighten(@fc-link-color, 20%);
 
 // Functions
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,7 +135,7 @@ article > header.article-header {
         .rounded-corners(20px);
 
         padding: 0.2em 1.2em 0.2em 1.2em;
-        border: solid 2px lighten(@fc-link-color, 50%);
+        border: solid 2px @fc-main-nav-border-color;
         display: inline-block;
         background-color: transparent;
         text-decoration: none;
@@ -142,7 +144,7 @@ article > header.article-header {
       }
 
       a:hover, a:visited:hover, a:focus, a:visited:hover {
-        @background-color: lighten(@fc-link-color, 20%);
+        @background-color: @fc-main-nav-hover-background-color;
 
         background-color: @background-color;
         border-color: @background-color;
@@ -253,6 +255,23 @@ header.header {
   }
 }
 
+// Read more link
+a.more-link, a.more-link:visited {
+  font-size: 1.1em;
+  color: @fc-body-color;
+  text-decoration: none;
+  background-color: lighten(@fc-divider-color, 7%);
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  margin-top: 0.8em;
+}
+
+a.more-link:hover, a.more-link:focus, a.more-link:visited:hover, a.more-link:visited:focus {
+  background-color: @fc-main-nav-hover-background-color;
+  color: #fff;
+}
+
+
 // Code
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -260,6 +279,7 @@ header.header {
   font-family: @fc-monospace;
 }
 
+// <code> tags in paragraphs
 p > code, p > a code {
   font-size: 0.9em;
   background-color: darken(#fff, 1%);
@@ -268,6 +288,7 @@ p > code, p > a code {
   .rounded-corners(5px);
 }
 
+// Code blocks
 .entry-content pre {
   background: @fc-pre-background-color;
   border: none;
@@ -336,9 +357,11 @@ p.tags {
 // Footer
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Add divider after the tags
 body.single-post footer.article-footer {
   border-bottom: solid 1px @fc-divider-color;
 }
+
 
 
 

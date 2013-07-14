@@ -18,7 +18,7 @@
 								</header> <!-- end article header -->
 
 								<section class="entry-content clearfix">
-									<?php the_excerpt(); ?>
+									<?php the_content('Read on &rarr;'); ?>
 								</section> <!-- end article section -->
 
                 <?php /*>
