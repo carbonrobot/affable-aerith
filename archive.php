@@ -47,10 +47,8 @@
 
 								<header class="article-header">
 
-									<h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-									<p class="byline vcard"><?php
-										printf(__('Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'bonestheme'), get_the_time('Y-m-j'), get_the_time(__('F jS, Y', 'bonestheme')), bones_get_the_author_posts_link(), get_the_category_list(', '));
-									?></p>
+									<h3 class="h1"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+									<p class="byline vcard"><?php echo affable_html_current_post_byline(); ?></p>
 
 								</header> <!-- end article header -->
 
@@ -58,7 +56,7 @@
 
 									<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
 
-									<?php the_excerpt(); ?>
+									<?php the_content('Read on &rarr;'); ?>
 
 								</section> <!-- end article section -->
 
@@ -70,16 +68,7 @@
 
 							<?php endwhile; ?>
 
-									<?php if (function_exists('bones_page_navi')) { ?>
-										<?php bones_page_navi(); ?>
-									<?php } else { ?>
-										<nav class="wp-prev-next">
-											<ul class="clearfix">
-												<li class="prev-link"><?php next_posts_link(__('&laquo; Older Entries', "bonestheme")) ?></li>
-												<li class="next-link"><?php previous_posts_link(__('Newer Entries &raquo;', "bonestheme")) ?></li>
-											</ul>
-										</nav>
-									<?php } ?>
+              <?php include('pages-nav.php'); ?>
 
 							<?php else : ?>
 

@@ -29,6 +29,10 @@ body {
   font-family: @fc-sans-serif;
 }
 
+body.tag {
+  color: @fc-body-color;
+}
+
 a, a:visited {
   color: @fc-link-color;
 }
@@ -45,9 +49,8 @@ h1, .h1 {
   font-weight: bold;
   color: #222;
 
-  a, a:visited {
-    color: #222;
-  }
+  a, a:visited { color: #222; }
+  a:hover, a:visited:hover, a:focus, a:visited:focus { color: @fc-link-hover-color; }
 }
 
 ol {
@@ -57,7 +60,7 @@ ol {
 }
 
 // Smaller header sizes on home page.
-.home article {
+body.home article, body.archive article {
   @ratio: 0.9;
   h1, .h1 { font-size: 2.5em * @ratio; }
   h2, .h2 { font-size: 1.75em * @ratio; }
@@ -65,7 +68,7 @@ ol {
 
 // Lesser space between the post title and the byline 
 article > header.article-header {
-  > h1 { margin-bottom: 0.1em; }
+  > h1, .h1 { margin-bottom: 0.1em; }
   > p.byline { 
     margin-top: 0.1em; 
 
@@ -262,6 +265,13 @@ a.more-link:hover, a.more-link:focus, a.more-link:visited:hover, a.more-link:vis
   color: #fff;
 }
 
+// Home page
+body.home {
+  article header.article-header { 
+    h1, .h1 { margin-top: 1em; }
+  }
+  article:first-child header.article-header h1 { margin-top: 0.67em; }
+}
 
 // Code
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -271,7 +281,7 @@ a.more-link:hover, a.more-link:focus, a.more-link:visited:hover, a.more-link:vis
 }
 
 // <code> tags in paragraphs
-p > code, p > a code {
+p > code, p > a code, .entry-content > ol > li > code {
   font-size: 0.9em;
   background-color: darken(#fff, 1%);
   padding: 0.2em 0.3em;
@@ -331,7 +341,6 @@ p.tags {
   line-height: 2.2em;
 
   a, a:visited {
-    //color: @fc-body-color;
     text-decoration: none;
     padding: 0.3em 0.5em;
     border: dotted 1px @fc-divider-color;

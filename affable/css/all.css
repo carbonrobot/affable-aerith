@@ -2025,6 +2025,9 @@ be set to display none.
 body {
   font-family: 'PT Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+body.tag {
+  color: #565656;
+}
 a,
 a:visited {
   color: #188fbf;
@@ -2058,21 +2061,36 @@ h1 a:visited,
 .h1 a:visited {
   color: #222;
 }
+h1 a:hover,
+.h1 a:hover,
+h1 a:visited:hover,
+.h1 a:visited:hover,
+h1 a:focus,
+.h1 a:focus,
+h1 a:visited:focus,
+.h1 a:visited:focus {
+  color: #126d92;
+}
 ol {
   list-style-type: decimal;
 }
 ol li {
   margin-left: 1.2em;
 }
-.home article h1,
-.home article .h1 {
+body.home article h1,
+body.archive article h1,
+body.home article .h1,
+body.archive article .h1 {
   font-size: 2.25em;
 }
-.home article h2,
-.home article .h2 {
+body.home article h2,
+body.archive article h2,
+body.home article .h2,
+body.archive article .h2 {
   font-size: 1.575em;
 }
-article > header.article-header > h1 {
+article > header.article-header > h1,
+article > header.article-header .h1 {
   margin-bottom: 0.1em;
 }
 article > header.article-header > p.byline {
@@ -2246,6 +2264,13 @@ a.more-link:visited:focus {
   background-color: #53beea;
   color: #fff;
 }
+body.home article header.article-header h1,
+body.home article header.article-header .h1 {
+  margin-top: 1em;
+}
+body.home article:first-child header.article-header h1 {
+  margin-top: 0.67em;
+}
 .mono,
 pre,
 code,
@@ -2256,7 +2281,8 @@ li code {
   font-family: Menlo, Monaco, 'Andale Mono', 'lucida console', 'Courier New', monospace;
 }
 p > code,
-p > a code {
+p > a code,
+.entry-content > ol > li > code {
   font-size: 0.9em;
   background-color: #fcfcfc;
   padding: 0.2em 0.3em;
