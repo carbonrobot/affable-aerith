@@ -2251,3 +2251,9 @@ nav.wp-prev-next li.only-link a {
   -moz-border-radius: 30px;
   border-radius: 30px;
 }
+footer.footer {
+  margin-top: 1.2em;
+}
+#disqus_thread {
+  margin-top: 2em;
+}
