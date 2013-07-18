@@ -59,27 +59,6 @@ ol {
   li { margin-left: 1.2em; }
 }
 
-// Smaller header sizes on home page.
-body.home article, body.archive article {
-  @ratio: 0.9;
-  h1, .h1 { font-size: 2.5em * @ratio; }
-  h2, .h2 { font-size: 1.75em * @ratio; }
-}
-
-// Lesser space between the post title and the byline 
-article > header.article-header {
-  > h1, .h1 { margin-bottom: 0.1em; }
-  > p.byline { 
-    margin-top: 0.1em; 
-
-    a, a:visited { color: @fc-byline-textcolor; text-decoration: none; }
-    a:hover, a:visited:hover, a:focus, a:visited:focus { 
-      color: @fc-link-hover-color;
-      text-decoration: underline; 
-    };
-  }
-}
-
 // Increase the max width
 .wrap {
   max-width: 1200px;
@@ -120,7 +99,7 @@ article > header.article-header {
 
     li {
       float: none;
-      display: inline;
+      display: inline-block;
       margin-bottom: 0.5em;
       margin-right: 1em;
 
@@ -232,6 +211,39 @@ header.header {
 
     a, a:visited { text-decoration: none; }
     a:hover, a:visited:hover, a:focus, a:visited:hover { text-decoration: underline; }
+  }
+}
+
+// Article Header
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Base (mobile) sizes
+h1, .h1 { font-size: 1.7em; }
+h2, .h2 { font-size: 1.6em; }
+
+@media only screen and (min-width: 768px) {
+  h1, .h1 { font-size: 2.5em; }
+  h2, .h2 { font-size: 1.75em; }
+
+  // Smaller header sizes on home page.
+  body.home article, body.archive article {
+    @ratio: 0.9;
+    h1, .h1 { font-size: 2.5em * @ratio; }
+    h2, .h2 { font-size: 1.75em * @ratio; }
+  }
+}
+
+// Lesser space between the post title and the byline 
+article > header.article-header {
+  > h1, .h1 { margin-bottom: 0.1em; }
+  > p.byline { 
+    margin-top: 0.1em; 
+
+    a, a:visited { color: @fc-byline-textcolor; text-decoration: none; }
+    a:hover, a:visited:hover, a:focus, a:visited:focus { 
+      color: @fc-link-hover-color;
+      text-decoration: underline; 
+    };
   }
 }
 

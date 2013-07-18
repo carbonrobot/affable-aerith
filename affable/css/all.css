@@ -2077,37 +2077,6 @@ ol {
 ol li {
   margin-left: 1.2em;
 }
-body.home article h1,
-body.archive article h1,
-body.home article .h1,
-body.archive article .h1 {
-  font-size: 2.25em;
-}
-body.home article h2,
-body.archive article h2,
-body.home article .h2,
-body.archive article .h2 {
-  font-size: 1.575em;
-}
-article > header.article-header > h1,
-article > header.article-header .h1 {
-  margin-bottom: 0.1em;
-}
-article > header.article-header > p.byline {
-  margin-top: 0.1em;
-}
-article > header.article-header > p.byline a,
-article > header.article-header > p.byline a:visited {
-  color: #999999;
-  text-decoration: none;
-}
-article > header.article-header > p.byline a:hover,
-article > header.article-header > p.byline a:visited:hover,
-article > header.article-header > p.byline a:focus,
-article > header.article-header > p.byline a:visited:focus {
-  color: #126d92;
-  text-decoration: underline;
-}
 .wrap {
   max-width: 1200px;
 }
@@ -2139,7 +2108,7 @@ article > header.article-header > p.byline a:visited:focus {
 }
 .main-nav ul li {
   float: none;
-  display: inline;
+  display: inline-block;
   margin-bottom: 0.5em;
   margin-right: 1em;
 }
@@ -2237,6 +2206,55 @@ header.header .blog-info {
 .widget ul > li a:visited:hover,
 .widget ul > li a:focus,
 .widget ul > li a:visited:hover {
+  text-decoration: underline;
+}
+h1,
+.h1 {
+  font-size: 1.7em;
+}
+h2,
+.h2 {
+  font-size: 1.6em;
+}
+@media only screen and (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 2.5em;
+  }
+  h2,
+  .h2 {
+    font-size: 1.75em;
+  }
+  body.home article h1,
+  body.archive article h1,
+  body.home article .h1,
+  body.archive article .h1 {
+    font-size: 2.25em;
+  }
+  body.home article h2,
+  body.archive article h2,
+  body.home article .h2,
+  body.archive article .h2 {
+    font-size: 1.575em;
+  }
+}
+article > header.article-header > h1,
+article > header.article-header .h1 {
+  margin-bottom: 0.1em;
+}
+article > header.article-header > p.byline {
+  margin-top: 0.1em;
+}
+article > header.article-header > p.byline a,
+article > header.article-header > p.byline a:visited {
+  color: #999999;
+  text-decoration: none;
+}
+article > header.article-header > p.byline a:hover,
+article > header.article-header > p.byline a:visited:hover,
+article > header.article-header > p.byline a:focus,
+article > header.article-header > p.byline a:visited:focus {
+  color: #126d92;
   text-decoration: underline;
 }
 #content {
