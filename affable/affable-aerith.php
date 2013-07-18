@@ -28,18 +28,27 @@ function affable_html_current_post_byline()
     get_the_time(get_option('date_format')));
 }
 
-function affable_html_main_nav()
+function affable_main_nav()
 {
-  return wp_page_menu(array(
-    'show_home'   => true,
-    'menu_class'  => 'main-nav clearfix', // adding custom nav class
-    'include'     => '',
-    'exclude'     => '',
-    'echo'        => false,
-    'link_before' => '',                     // before each link
-    'link_after'  => ''                      // after each link
+  wp_nav_menu(array(
+    'container'       => 'div',
+    'container_class' => 'main-nav clearfix',
+    'menu'            => __('The Main Menu', 'bonestheme'),
+    'menu_class'      => '',
+    'theme_location'  => 'main-nav',
+    'depth'           => 1, // Only 1st level is supported
+    'fallback_cb'     => 'affable_main_nav_fallback'
   ));
 }
+
+function affable_main_nav_fallback()
+{
+  wp_page_menu(array(
+    'show_home'  => true,
+    'menu_class' => 'main-nav clearfix', // adding custom nav class
+  ));
+}
+
 
 function affable_article_tags()
 {

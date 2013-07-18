@@ -3,7 +3,7 @@
           <?php include(dirname(__FILE__) . '/blog-info.php'); ?>
 
 					<nav class="side-nav" role="navigation">
-						<?php echo affable_html_main_nav(); ?>
+						<?php affable_main_nav(); ?>
 					</nav>
 
           <?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>

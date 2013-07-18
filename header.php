@@ -46,7 +46,7 @@
         <div id="inner-header" class="wrap clearfix">
           <?php include(dirname(__FILE__) . '/blog-info.php'); ?>
 					<nav role="navigation">
-						<?php echo affable_html_main_nav(); ?>
+						<?php affable_main_nav(); ?>
 					</nav>
         </div>
       </header>
