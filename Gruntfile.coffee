@@ -20,7 +20,7 @@ module.exports = (grunt) ->
           separator: ';'
         files:
            'affable/js/all.js': [
-             'library/js/scripts.js',
+             'library/js/scripts.js', # Bones JS
              'affable/js/libs/prettify.js',
              'affable/js/affable.js'
            ]
@@ -41,11 +41,21 @@ module.exports = (grunt) ->
       all:
         files: ['**/*.php']
         tasks: ['reload']
+    uglify:
+      all:
+        files:
+          'affable/js/all.js': ['affable/js/all.js']
+    cssmin:
+      all:
+        files:
+          'affable/css/all.css': ['affable/css/all.css']
 
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-cssmin'
 
   # https://coderwall.com/p/keuhda
   grunt.registerTask "reload", "reload Chrome on OS X", ->
@@ -57,4 +67,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default', ['less', 'coffee', 'concat']
   grunt.registerTask 'dev', ['default', 'watch']
+  grunt.registerTask 'build', ['default', 'uglify', 'cssmin']
 
