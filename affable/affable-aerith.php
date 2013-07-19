@@ -1,10 +1,34 @@
 <?php
 
 add_action('after_setup_theme', 'affable_setup', 17);
+add_action('customize_register', 'affable_customize_register');
 
 function affable_setup()
 {
   add_action('wp_enqueue_scripts', 'affable_scripts_and_styles', 1000);
+
+  // Remove stuffs we don't support (yet)
+  unregister_nav_menu('footer-links');
+  remove_theme_support('custom-background');
+}
+
+function affable_customize_register($wp_customize)
+{
+  $wp_customize->add_setting('affable_avatar_image_url', array(
+    'default' => 'http://lorempixel.com/150/150/cats',
+  ));
+  $wp_customize->add_setting('affable_gravatar_email', array(
+    'default' => '',
+  ));
+
+  $wp_customize->add_control('affable_gravatar_email', array(
+    'label'   => __('Gravatar Email Address', 'bonestheme'),
+    'section' => 'title_tagline',
+  ));
+  $wp_customize->add_control('affable_avatar_image_url', array(
+    'label'   => __('Avatar Image Url', 'bonestheme'),
+    'section' => 'title_tagline',
+  ));
 }
 
 function affable_scripts_and_styles()
@@ -19,6 +43,23 @@ function affable_scripts_and_styles()
     wp_enqueue_script('affable-js');
     wp_enqueue_style('affable-stylesheet');
   }
+}
+
+/**
+ * Returns the gravatar image if it is set. If not, tries to get the image url set in the
+ * theme customization page.
+ * @return string
+ */
+function affable_get_avatar_image_url()
+{
+  $email = trim(strval(get_theme_mod('affable_gravatar_email')));
+  if (!empty($email)) {
+    // https://en.gravatar.com/site/implement/hash/
+    $hash = md5(strtolower($email));
+    return "http://secure.gravatar.com/avatar/{$hash}?s=150";
+  }
+
+  return get_theme_mod('affable_avatar_image_url');
 }
 
 function affable_html_current_post_byline()
