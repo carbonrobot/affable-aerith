@@ -59,6 +59,11 @@ ol {
   li { margin-left: 1.2em; }
 }
 
+ul {
+  list-style-type: disc;
+  li { margin-left: 1.2em; }
+}
+
 // Increase the max width
 .wrap {
   max-width: 1200px;
@@ -102,6 +107,7 @@ ol {
       display: inline-block;
       margin-bottom: 0.5em;
       margin-right: 1em;
+      margin-left: 0;
 
       a, a:visited {
         .rounded(20px);
@@ -208,6 +214,7 @@ header.header {
   ul > li {
     .fc-widget-li-border;
     font-size: 0.95em;
+    margin-left: 0;
 
     a, a:visited { text-decoration: none; }
     a:hover, a:visited:hover, a:focus, a:visited:hover { text-decoration: underline; }

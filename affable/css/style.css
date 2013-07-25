@@ -1912,6 +1912,12 @@ ol {
 ol li {
   margin-left: 1.2em;
 }
+ul {
+  list-style-type: disc;
+}
+ul li {
+  margin-left: 1.2em;
+}
 .wrap {
   max-width: 1200px;
 }
@@ -1946,6 +1952,7 @@ ol li {
   display: inline-block;
   margin-bottom: 0.5em;
   margin-right: 1em;
+  margin-left: 0;
 }
 .main-nav ul li a,
 .main-nav ul li a:visited {
@@ -2032,6 +2039,7 @@ header.header .blog-info {
   padding-bottom: 0.5em;
   margin-bottom: 0;
   font-size: 0.95em;
+  margin-left: 0;
 }
 .widget ul > li a,
 .widget ul > li a:visited {
